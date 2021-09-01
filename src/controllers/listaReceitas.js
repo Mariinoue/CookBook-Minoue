@@ -16,7 +16,31 @@ const getAll=(req, res) => {
     })
 };
 
+const getById=async(req,res)=>{
+
+    try{
+        
+        const tituloId= await Receita.findById(req.params.id)
+        console.log(tituloId);
+  
+        if (tituloId==null){
+            return res.status(404).json({ message: "filme não encontrado"})
+        }
+  
+        if(tituloId !=null){
+            
+            return res.status(200).json(tituloId)
+        }
+  
+        
+       }catch(err){
+        res.status(500).json({ message:err.message })
+  
+    }
+  
+  }
 
 module.exports={
-    getAll
+    getAll,
+    getById
 }

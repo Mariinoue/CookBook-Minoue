@@ -2,20 +2,17 @@ const express = require("express");
 const router = express.Router();
 
 const controller = require("../controllers/listaReceitas")
-const controller2 = require("../controllers/createReceitas")
-const controller3 = require("../controllers/deletarReceitas")
-const controller4 = require("../controllers/updateReceitas")
+const controllerCreate = require("../controllers/createReceitas")
+const controllerDelete = require("../controllers/deletarReceitas")
+const controllerUpdate = require("../controllers/updateReceitas")
 
-router.get('/receitas',controller.getAll);
-//router.get("/travels/:id", controller.getTravelById);
+router.get('/',controller.getAll);
+router.get("/:id", controller.getById);
 
-router.post("/travels/:id/passenger/create", controller2.createReceita);
+router.post("/",controllerCreate.createReceita);
 
-//router.delete("/passenger/:id/delete", controller.deletePerson);
+router.delete("/:id/delete",controllerDelete.deleteReceita);
 
-//router.put("/passenger/:id/update", controller.updatePerson);
-
-//router.patch("/passenger/:id/updateName", controller.updateName);
-
+router.put("/:id/update",controllerUpdate.update );
 
 module.exports = router;

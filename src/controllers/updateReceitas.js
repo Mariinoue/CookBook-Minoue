@@ -1,10 +1,12 @@
+const express=require('express')
+const router=express.Router()
 const mongoose=require('mongoose')
-const Receita=require('../models/diretor')
+const Receita=require('../models/receitas')
 
-const updateOne=async(req,res)=>{
+const update =async(req,res)=>{
 
     try{
-        //tenta encontrar um diretor pelo id 
+        //tenta encontrar receita pelo id 
         const receita= await Receita.findById(req.params.id)
 
         if (receita==null){
@@ -13,18 +15,17 @@ const updateOne=async(req,res)=>{
 
         if(req.body.titulo !=null){
             receita.titulo=req.body.titulo,
-            receita.titulo=req.body.titulo,
-            receita.titulo=req.body.titulo,
-            receita.titulo=req.body.titulo,
-            receita.titulo=req.body.titulo,
-            receita.titulo=req.body.titulo,
-            receita.titulo=req.body.titulo,
-            receita.titulo=req.body.titulo,
-            receita.titulo=req.body.titulo
+            receita.categoria=req.body.categoria,
+            receita.ingredientes=req.body.ingredientes,
+            receita.modoDePreparo=req.body.modoDePreparo,
+            receita.observacao=req.body.observacao,
+            receita.fontLink=req.body.fontLink,
+            receita.foto=req.body.foto,
+            receita.criadoEm=req.body.criadoEm
         }
 
-        const diretorAtualizado= await diretor.save()
-        res.status(200).json(diretorAtualizado)
+        const receitaAtualizada= await receita.save()
+        res.status(200).json(receitaAtualizada)
 
     }catch(err){
         res.status(500).json({ message:err.message })
@@ -36,5 +37,5 @@ const updateOne=async(req,res)=>{
 
 module.exports={
 
-    updateOne 
+    update 
 }

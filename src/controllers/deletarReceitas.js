@@ -1,15 +1,17 @@
+const express=require('express')
+const router=express.Router()
 const mongoose=require('mongoose')
-const Receitas=require('../models/receitas')
+const Receita=require('../models/receitas')
 
 const deleteReceita= (req, res) => {
     const requiredId = req.params.id;
-    Receitas.find({ id: requiredId }, function (err, receita) {
+    Receita.find({ id: requiredId }, function (err, receita) {
         if (err) {
             res.status(500).send({ message: err.message })
         } else {
             if (receita) {
                 
-                Receitas.deleteOne({ id: requiredId }, function (err) {
+                Receita.deleteOne({ id: requiredId }, function (err) {
                     if (err) {
                         res.status(500).send({
                             message: err.message,

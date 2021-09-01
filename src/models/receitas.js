@@ -18,10 +18,6 @@ const receitaSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  avaliacao: {
-    type: String,
-    required: true
-  },
   observacao: {
     type: String,
     required: true
@@ -41,4 +37,6 @@ const receitaSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('receita', receitaSchema)
+const receitas=mongoose.model('receitas', receitaSchema)
+
+module.exports=receitas
