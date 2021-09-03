@@ -20,16 +20,16 @@ const getById=async(req,res)=>{
 
     try{
         
-        const tituloId= await Receita.findById(req.params.id)
-        console.log(tituloId);
+        const receitaId= await Receita.findById(req.params.id)
+        console.log(receitaId);
   
-        if (tituloId==null){
+        if (receitaId==null){
             return res.status(404).json({ message: "filme não encontrado"})
         }
   
-        if(tituloId !=null){
+        if(receitaId !=null){
             
-            return res.status(200).json(tituloId)
+            return res.status(200).json(receitaId)
         }
   
         

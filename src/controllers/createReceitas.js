@@ -5,7 +5,7 @@ const Receita=require('../models/receitas')
 
 
 const createReceita = async (req, res) => {
-    const estudio = new Receita({
+    const receita = new Receita({
       _id: new mongoose.Types.ObjectId(),
       titulo: req.body.titulo,
         categoria: req.body.categoria,
@@ -16,13 +16,13 @@ const createReceita = async (req, res) => {
         foto: req.body.foto,
       criadoEm: req.body.criadoEm,
     })
-    const estudioJaExiste = await Receita.findOne({titulo: req.body.titulo})
-    if (estudioJaExiste) {
+    const receitaJaExiste = await Receita.findOne({titulo: req.body.titulo})
+    if (receitaJaExiste) {
       return res.status(409).json({error: 'Receita ja cadastrado.'})
     }
     try{
-      const novoEstudio = await estudio.save()
-      res.status(201).json(novoEstudio)
+      const novoReceita = await receita.save()
+      res.status(201).json(novoReceita)
     } catch(err) {
       res.status(400).json({ message: err.message})
     }
