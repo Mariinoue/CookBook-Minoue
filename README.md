@@ -28,7 +28,11 @@ Tecnologias que vamos usar:
 |Robo 3T	|Interface gráfica para verificar se os dados foram persistidos
 |Postman	|Interface gráfica para realizar os testes
 
-___________________________________________
+## Essa é uma API para endpoints de acesso a informações do produto.
+
+![Captura de tela 2021-09-05 104916](https://user-images.githubusercontent.com/82849390/132129351-737c1a23-2266-48ed-8f63-be4e9fe65ae6.png)
+
+__________________________
 
 
        📁 Arquitetura
