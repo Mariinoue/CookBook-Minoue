@@ -1,7 +1,9 @@
 const mongoose=require('mongoose')
 
+const MONGO_URL=process.env.MONGODB_URI 
+
 const connect=()=>
-    {mongoose.connect('mongodb://localhost:27017/cookbook',
+    {mongoose.connect(MONGO_URL,
 
     {
         useNewUrlParser:true,
