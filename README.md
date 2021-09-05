@@ -1,8 +1,6 @@
 # CookBook-Minoue
 ## Sobre o Projeto:
 
-[Heading Link](#Requisitos:)
-
 CookBook é um Caderno de receitas virtual. Solução pensada para pessoas que cozinham em casa.
 No periodo da pandemia entre 2020 e 2021, foi observado o aumento de pessoas que mudaram de hábitos, 
 como por exemplo introduziram o ato de cozinhar em seu cotidiano. 
@@ -71,46 +69,40 @@ __________________________
 
 
 
-##Requisitos:
+## Requisitos:
 
-⭐ "/titulos/akira" Deverá retornar todos os títulos com o diretor Akira Kurosawa
-
-
+⭐ "/receitas" Deverá retornar todas as receitas
+⭐ "/receitas/{:id}" Deverá retornar as receitas por id
+⭐ "/receitas" Deverá cadastrar novas receitas
+⭐ "/receitas/{:id}/update" Deverá alterar as receita por id
+⭐ "/receitas/{:id}/delete" Deverá deletar as receita por id
 
 Regras de negócio:
 
-✅ Não deverá ser possível criar estudio com o mesmo nome,
-
-✅Não deverá ser possível criar título com o mesmo nome,
-
-✅Para criar um novo título, deverá vincular no momento da criação a um estudio já existente no sistema, utilizando o numero do id do estudio correspondente no corpo da requisição
+✅ Não deverá ser possível criar receita com o mesmo nome
 
 ____________________________________
 Dados para Collection Receitas
 id: autogerado e obrigatório
-nome: texto e obrigatório
+titulo : texto e obrigatório
 criadoEm: data gerada automaticamente e obrigatório
 API deve retornar seguinte JSON:
 
         [
-            {
-            "_id" : ObjectId("6115565d9b82f148cc825871"),
-            "criadoEm" : ISODate("2021-08-12T17:04:39.767Z"),
-            "nome" : "Akira Kurosawa",
-            "__v" : 0
+             Receita: {
+            
+                
+                _id: '612fb05536390ee8fabc6d2c',
+                titulo: 'FILÉ DE PESCADA FRITA COM SALADINHA DE ERVAS E PURÊ DE ERVILHA',
+                categoria: 'peixe',
+                ingredientes: '300 g ervilha congelada,1 cebola picada fino,2 colheres (sopa) de manteiga,¼ de xícara (chá) de água,folhas de hortelã lavadas a gosto,sal e pimenta-do-reino moída na hora a gosto',
+                modoDePreparo: ' Retire dois filés de peixe do tempero e deixe escorrer o excesso de caldo de limão. Passe pela farinha de trigo, empanando bem dos dois lados - pressione delicadamente com as mãos para a farinha grudar.6. Assim que o óleo estiver quente, coloque delicadamente os filés de peixe empanados. Deixe por cerca de 3 minutos até ficar com a casquinha dourada.',
+                observacao: 'Uma delicia',
+                fontLink: 'https://www.panelinha.com.br/receita/File-de-pescada-frita-com-saladinha-de-ervas-e-pure-de-ervilha',
+                foto: 'sem foto',
+                criadoEm: '2021-09-04T16:07:37.421Z'
             }
         ]
-___________
-
-Dados para Collection Titulos
-id: autogerado e obrigatório
-nome: texto e obrigatório
-genero: texto e obrigatório
-descricao: texto e obrigatório
-criadoEm: data gerada automaticamente e obrigatório
-estudio: referencia do estudio cadastrado previamente obrigatório
-API deve retornar seguinte JSON:
-
 
 _______________________     
 
