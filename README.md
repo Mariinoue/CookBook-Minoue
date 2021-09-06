@@ -77,6 +77,32 @@ __________________________
 ⭐ "/receitas/{:id}/update" Deverá alterar as receita por id
 ⭐ "/receitas/{:id}/delete" Deverá deletar as receita por id
 
+### Deploy realizado na plataforma nuvem Heroku
+Endpoint Index
+https://cookbook-minoue.herokuapp.com
+![IndexReceitas](https://user-images.githubusercontent.com/82849390/132223760-e734f993-3239-4f60-a726-5aba0087d29e.gif)
+
+Endpoint para mostrar todas as receitas 
+https://cookbook-minoue.herokuapp.com/receita
+![getAllReceitas](https://user-images.githubusercontent.com/82849390/132224291-00ac57d7-ca37-4e20-9332-7b7537ae7b09.gif)
+
+Endpoint para fazer busca por {:id}
+https://cookbook-minoue.herokuapp.com/{:id}
+![get-id-Receitas](https://user-images.githubusercontent.com/82849390/132226811-5c0d89b6-7669-4a0b-8c5e-079ae7aec986.gif)
+
+Endpoint para cadastras nova receita
+https://cookbook-minoue.herokuapp.com/receita
+![postNovaReceitas](https://user-images.githubusercontent.com/82849390/132225963-bb8ff4b8-212e-4dbc-bd20-2b4ffd390bd8.gif)
+
+Endpoint para fazer alteração por {:id}
+https://cookbook-minoue.herokuapp.com/receita/{:id}/update
+![putReceitas](https://user-images.githubusercontent.com/82849390/132225388-16327e34-434d-4949-9232-45b68f1f8300.gif)
+
+Endpoint deletar receita por {:id}
+https://cookbook-minoue.herokuapp.com/receita/{:id}/delete
+![deleteReceitas](https://user-images.githubusercontent.com/82849390/132226266-b155f6ca-3bfe-47c7-a050-76511a9ad8b3.gif)
+
+_______________________________________________________________________
 Regras de negócio:
 
 ✅ Não deverá ser possível criar receita com o mesmo nome
@@ -84,6 +110,8 @@ Regras de negócio:
 ____________________________________
 Dados para Collection Receitas
 id: autogerado e obrigatório
+
+
 titulo : texto e obrigatório
 criadoEm: data gerada automaticamente e obrigatório
 API deve retornar seguinte JSON:
