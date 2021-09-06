@@ -1,8 +1,25 @@
 const mongoose=require('mongoose')
 const Receita=require('../models/receitas')
+const express=require('express')
+const app=express()
+const cors=require('cors')
 
 const getAll=(req, res) => {
-    //Find sempre retorna uma lista
+  /*
+    #swagger.tags = ['Receitas']
+    #swagger.description = 'Endpoint parra obter uma lista de receitas' 
+    #swagger.responses[200] = {
+      schema: { $ref: "#/definitions/Receitas"},
+      description: 'Produto encontrado'
+    }
+    #swagger.responses[204] = {
+      description: 'Produto não encontrado'
+    }
+    #swagger.responses[500] = {
+      description: 'Desculpe, tivemos um problema com a requisição'
+    }
+  */
+ 
     Receita.find(function (err, receitaFound) {
         if (err) {
             res.status(500).send({ message: err.message })
@@ -17,7 +34,12 @@ const getAll=(req, res) => {
 };
 
 const getById=async(req,res)=>{
+ /*
+    #swagger.tags = ['Receitas']
+    #swagger.description = 'Endpoint para obter receita por id' 
 
+  
+  */
     try{
         
         const receitaId= await Receita.findById(req.params.id)

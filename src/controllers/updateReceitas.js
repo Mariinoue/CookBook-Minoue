@@ -4,7 +4,12 @@ const mongoose=require('mongoose')
 const Receita=require('../models/receitas')
 
 const update =async(req,res)=>{
+ /*
+    #swagger.tags = ['Receitas']
+    #swagger.description = 'Endpoint para alterar receita por id' 
 
+  
+  */
     try{
         //tenta encontrar receita pelo id 
         const receita= await Receita.findById(req.params.id)

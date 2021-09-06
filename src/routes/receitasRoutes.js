@@ -6,13 +6,13 @@ const controllerCreate = require("../controllers/createReceitas")
 const controllerDelete = require("../controllers/deletarReceitas")
 const controllerUpdate = require("../controllers/updateReceitas")
 
-router.get('/',controller.getAll);
-router.get("/:id", controller.getById);
+router.get('/receita',controller.getAll);
+router.get("/receita/:id", controller.getById);
 
-router.post("/",controllerCreate.createReceita);
+router.post("/receita",controllerCreate.createReceita);
 
-router.delete("/:id/delete",controllerDelete.deleteReceita);
+router.delete("/receita/:id/delete",controllerDelete.deleteReceita);
 
-router.put("/:id/update",controllerUpdate.update );
+router.put("/receita/:id/update",controllerUpdate.update );
 
 module.exports = router;

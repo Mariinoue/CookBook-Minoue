@@ -4,6 +4,12 @@ const mongoose=require('mongoose')
 const Receita=require('../models/receitas')
 
 const deleteReceita= (req, res) => {
+     /*
+    #swagger.tags = ['Receitas']
+    #swagger.description = 'Endpoint para deletar receita por id' 
+
+  
+  */
     const requiredId = req.params.id;
     Receita.find({ id: requiredId }, function (err, receita) {
         if (err) {

@@ -1,0 +1,293 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Cookbook-Minoue-Api",
+    "description": "Api para consumir endepoints relacionados a receitas do caderno de receitas virtual "
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Receitas",
+      "description": "Endpoints relacionados aos recursos do Cookbook "
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Receitas"
+        ],
+        "description": "Infos da API",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/receita": {
+      "get": {
+        "tags": [
+          "Receitas"
+        ],
+        "description": "Endpoint parra obter uma lista de receitas",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Produto encontrado",
+            "schema": {
+              "$ref": "#/definitions/Receitas"
+            }
+          },
+          "204": {
+            "description": "Produto não encontrado"
+          },
+          "500": {
+            "description": "Desculpe, tivemos um problema com a requisição"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Receitas"
+        ],
+        "description": "Endpoint para criar uma receita",
+        "parameters": [
+          {
+            "name": "NovaReceita",
+            "in": "body",
+            "description": "Informações da receita",
+            "required": true,
+            "type": "object",
+            "schema": {
+              "$ref": "#/definitions/NovaReceita"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Titulo e ingredientes são obrigatórios"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        }
+      }
+    },
+    "/receita/{id}": {
+      "get": {
+        "tags": [
+          "Receitas"
+        ],
+        "description": "Endpoint para obter receita por id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/receita/{id}/delete": {
+      "delete": {
+        "tags": [
+          "Receitas"
+        ],
+        "description": "Endpoint para deletar receita por id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/receita/{id}/update": {
+      "put": {
+        "tags": [
+          "Receitas"
+        ],
+        "description": "Endpoint para alterar receita por id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "titulo": {
+                  "example": "any"
+                },
+                "categoria": {
+                  "example": "any"
+                },
+                "ingredientes": {
+                  "example": "any"
+                },
+                "modoDePreparo": {
+                  "example": "any"
+                },
+                "observacao": {
+                  "example": "any"
+                },
+                "fontLink": {
+                  "example": "any"
+                },
+                "foto": {
+                  "example": "any"
+                },
+                "criadoEm\r": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Receitas": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "example": "61354bb8f1df34507398fae4"
+        },
+        "titulo": {
+          "type": "string",
+          "example": "Pão caseiro"
+        },
+        "categoria": {
+          "type": "string",
+          "example": "café da manhã"
+        },
+        "ingredientes": {
+          "type": "string",
+          "example": "farinha, água,sal e fermento biológico"
+        },
+        "modoDePreparo": {
+          "type": "string",
+          "example": "Mistura farinha, agua, sal e fermento. Sovar, descansar durante a noite e assar por 50 minutos"
+        },
+        "observacao": {
+          "type": "string",
+          "example": "assar na panela"
+        },
+        "fontLink": {
+          "type": "string",
+          "example": "https://www.panelinha.com.br/receita/Pao-italiano-caseiro"
+        },
+        "foto": {
+          "type": "string",
+          "example": ""
+        },
+        "criadoEm": {
+          "type": "string",
+          "example": "2021-09-05T22:04:31.775Z"
+        },
+        "__v": {
+          "type": "number",
+          "example": 0
+        }
+      }
+    },
+    "NovaReceita": {
+      "type": "object",
+      "properties": {
+        "titulo": {
+          "type": "string",
+          "example": "Pure de batata"
+        },
+        "categoria": {
+          "type": "string",
+          "example": "acompanhamento"
+        },
+        "ingredientes": {
+          "type": "string",
+          "example": "batata,mateiga,sal"
+        },
+        "modoDePreparo": {
+          "type": "string",
+          "example": "Cozinhar batatas, amassar e misturar manteiga e sal"
+        },
+        "observacao": {
+          "type": "string",
+          "example": "cozinhar até ficar macias"
+        },
+        "fontLink": {
+          "type": "string",
+          "example": "https://www.panelinha.com.br/receita"
+        },
+        "foto": {
+          "type": "string",
+          "example": ""
+        }
+      },
+      "required": [
+        "titulo",
+        "ingredientes",
+        "modoDePreparo"
+      ]
+    }
+  }
+}
