@@ -27,7 +27,7 @@ const deleteReceita= (req, res) => {
                     }
                 })
             } else {
-                res.status(404).send({ message: 'Não  removido com esse id' })
+                res.status(404).send({ message: 'Não pode ser removido com esse id' })
             }
         }
     })

@@ -24,7 +24,7 @@ const getById=async(req,res)=>{
         console.log(receitaId);
   
         if (receitaId==null){
-            return res.status(404).json({ message: "filme não encontrado"})
+            return res.status(404).json({ message: "Desculpe,receita não encontrado"})
         }
   
         if(receitaId !=null){

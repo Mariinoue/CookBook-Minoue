@@ -18,7 +18,7 @@ const createReceita = async (req, res) => {
     })
     const receitaJaExiste = await Receita.findOne({titulo: req.body.titulo})
     if (receitaJaExiste) {
-      return res.status(409).json({error: 'Receita ja cadastrado.'})
+      return res.status(409).json({error: 'Receita ja cadastrada.'})
     }
     try{
       const novoReceita = await receita.save()
