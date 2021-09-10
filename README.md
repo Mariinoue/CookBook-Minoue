@@ -27,6 +27,7 @@ Tecnologias que vamos usar:
 |MongoDb	|Banco de dado não relacional orietado a documentos
 |Robo 3T	|Interface gráfica para verificar se os dados foram persistidos
 |Postman	|Interface gráfica para realizar os testes
+|Swagger      |Documentar minha API
 
 ## Essa é uma API para endpoints de acesso a informações do produto.
 
